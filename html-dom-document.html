@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>8. HTML DOM Document</title>
+</head>
+<body>
+
+    <!-- 
+        8.HTML DOM Document:
+        a. Create a webpage with a button and a paragraph element.
+        b. Implement a JavaScript function that changes the text content of the paragraph element to "Button Clicked!" when the button is clicked.
+     -->
+    <h1>DOM Document Example</h1>
+
+    <p id="myParagraph">Initial Text</p>
+
+    <button onclick="changeText()">Click Me</button>
+
+    <script>
+         // Function to change the text content of the paragraph
+        function changeText() {
+        var paragraph = document.getElementById("myParagraph");
+        paragraph.textContent = "Button Clicked!";
+        }
+    </script>
+</body>
+</html>
