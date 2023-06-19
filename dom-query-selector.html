@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>13.DOM Query Selector:</title>
+    <style>
+        .myClass {
+          color: black;
+        }
+      </style>
+</head>
+<body>
+    
+    <h1>DOM Query Selector Example</h1>
+
+    <p id="paragraph1" class="myClass">This paragraph has the class "myClass".</p>
+    <p id="paragraph2" class="myClass">Lorem ipsum dolor sit amet.</p>
+    <p id="paragraph3" class="myClass">This paragraph also has the class "myClass".</p>
+
+    <button onclick="changeTextColor()">Change Text Color</button>
+
+    <script>
+        function changeTextColor() {
+          var paragraphs = document.querySelectorAll(".myClass");
+    
+          for (var i = 0; i < paragraphs.length; i++) {
+            paragraphs[i].style.color = "red";
+          }
+        }
+    </script>
+
+</body>
+</html>
