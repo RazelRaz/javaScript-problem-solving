@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>11.Create Element & Append Element:</title>
+</head>
+<body>
+    <h1>Create and Append Elements Example</h1>
+
+    <ul id="myList"></ul>
+
+    <button onclick="createListItems()">Create List Items</button>
+
+
+
+    <script>
+        function createListItems() {
+          var ul = document.getElementById("myList");
+    
+          for (var i = 1; i <= 5; i++) {
+            var li = document.createElement("li");
+            li.textContent = i;
+            ul.appendChild(li);
+          }
+        }
+    </script>
+</body>
+</html>
