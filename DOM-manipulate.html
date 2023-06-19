@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>10.DOM Manipulate CSS Class:</title>
+    <style>
+        .highlight {
+          background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+    
+    <h1>DOM Manipulate CSS Class Example</h1>
+
+    <p id="myParagraph">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+  
+    <button onclick="addHighlightClass()">Add Highlight Class</button>
+
+    
+    <script>
+        function addHighlightClass() {
+        var paragraph = document.getElementById("myParagraph");
+        paragraph.classList.add("highlight");
+        }
+    </script>
+</body>
+</html>
