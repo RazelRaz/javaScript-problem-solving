@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Navigator Object</title>
+</head>
+<body onload="displayBrowserInfo()">
+
+  <!-- 
+
+    5.Navigator Object:
+
+    a. Write a JavaScript function that detects the user's browser name and version using the navigator object.
+    b. Implement the function to display the user's browser name and version.
+
+   -->
+  
+   <h1>Browser Detection</h1>
+   <p>
+     Browser Name: <span id="browser-name"></span><br>
+     Browser Version: <span id="browser-version"></span>
+   </p>
+
+  <script>
+    function getBrowserInfo() {
+      const userAgent = navigator.userAgent;
+      let browserName = "";
+      let browserVersion = "";
+
+      // Check for Chrome
+      if (userAgent.indexOf("Chrome") > -1 && userAgent.indexOf("Safari") > -1) {
+        browserName = "Chrome";
+        browserVersion = userAgent.substring(
+          userAgent.indexOf("Chrome") + 7,
+          userAgent.indexOf("Safari")
+        );
+      }
+      // Check for Firefox
+      else if (userAgent.indexOf("Firefox") > -1) {
+        browserName = "Firefox";
+        browserVersion = userAgent.substring(
+          userAgent.indexOf("Firefox") + 8,
+          userAgent.length
+        );
+      }
+      // Check for Safari
+      else if (userAgent.indexOf("Safari") > -1) {
+        browserName = "Safari";
+        browserVersion = userAgent.substring(
+          userAgent.indexOf("Version") + 8,
+          userAgent.indexOf("Safari")
+        );
+      }
+      // Check for Internet Explorer
+      else if (userAgent.indexOf("MSIE") > -1 || userAgent.indexOf("Trident/") > -1) {
+        browserName = "Internet Explorer";
+        browserVersion = userAgent.substring(
+          userAgent.indexOf("MSIE") + 5,
+          userAgent.indexOf(";")
+        );
+      }
+      // Check for Microsoft Edge
+      else if (userAgent.indexOf("Edge") > -1) {
+        browserName = "Microsoft Edge";
+        browserVersion = userAgent.substring(
+          userAgent.indexOf("Edge") + 5,
+          userAgent.length
+        );
+      }
+      // Check for Opera
+      else if (userAgent.indexOf("Opera") > -1 || userAgent.indexOf("OPR") > -1) {
+        browserName = "Opera";
+        browserVersion = userAgent.substring(
+          userAgent.indexOf("Opera") + 6,
+          userAgent.length
+        );
+        if (userAgent.indexOf("OPR") > -1) {
+          browserName = "Opera";
+          browserVersion = userAgent.substring(
+            userAgent.indexOf("OPR") + 4,
+            userAgent.length
+          );
+        }
+      }
+
+      return {
+        name: browserName,
+        version: browserVersion,
+      };
+    }
+
+    // Function to display browser info on page load
+    function displayBrowserInfo() {
+      const browserInfo = getBrowserInfo();
+      const browserNameElement = document.getElementById("browser-name");
+      const browserVersionElement = document.getElementById("browser-version");
+
+      browserNameElement.textContent = browserInfo.name;
+      browserVersionElement.textContent = browserInfo.version;
+    }
+  </script>
+
+</body>
+</html>

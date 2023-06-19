@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>7.JS Common Events</title>
+</head>
+<body>
+
+    <!-- 
+        7.JS Common Events:
+
+        Implement a webpage with the following functionality:
+
+        a. When the user clicks anywhere on the page, display an alert with the coordinates (x, y) of the click.
+
+        b. When the user presses any key on the keyboard, display an alert with the key code of the pressed key.
+
+        c. When the user moves the mouse over an image, change the image source to another image of your choice.
+     -->
+    
+    <h1>JS Common Events:</h1>
+    <p>Click anywhere on the page to display coordinates.</p>
+    <div class="extraDiv" style="padding-top: 150px;"></div>
+    <p>Hover The image</p>
+    <img src="images/gym.jpg" alt="image" onmouseover="handleMouseOver(event)">
+
+
+    <script>
+        document.addEventListener("click", handleClick);
+        // Event handler for click event
+        function handleClick(event) {
+        const x = event.clientX;
+        const y = event.clientY;
+        alert(`Clicked at (${x}, ${y})`);
+        }
+
+        document.addEventListener('keydown', handleKeyPress)
+        // Event handler for keydown event
+        function handleKeyPress(event){
+            const keyCode = event.keyCode || event.which;
+            alert(`key Pressed: ${keyCode}`);
+        }
+
+        // Event handler for mouseover event
+        function handleMouseOver(event) {
+        const imageElement = event.target;
+        imageElement.src = "images/workout.jpg";
+        
+        }
+
+    </script>
+</body>
+</html>

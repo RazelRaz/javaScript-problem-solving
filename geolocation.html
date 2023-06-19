@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>6.Geolocation</title>
+</head>
+<body onload="displayCurrentLocation()">
+    
+
+    <h1>Geolocation Example</h1>
+    <p>
+        Latitude: <span id="latitude"></span><br>
+        Longitude: <span id="longitude"></span>
+    </p>
+
+    <script>
+
+        function displayCurrentLocation() {
+          navigator.geolocation.getCurrentPosition(
+            (position) => {
+              const latitude = position.coords.latitude;
+              const longitude = position.coords.longitude;
+              document.getElementById("latitude").textContent = latitude;
+              document.getElementById("longitude").textContent = longitude;
+            },
+            (error) => {
+              console.error("Error:", error.message);
+            }
+          );
+        }
+
+    </script>
+</body>
+</html>
