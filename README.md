@@ -1,6 +1,6 @@
 # javaScript-problem-solving
 
-# JavaScript Practice Questions
+
 
 1. **Date Object:**
    - Create a function that takes a date in the format "YYYY-MM-DD" as a parameter and returns the day of the week for that date. The function should use the Date object.
