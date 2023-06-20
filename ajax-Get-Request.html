@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>14.AJAX Get Request:</title>
+</head>
+<body>
+    <!-- 
+        14.AJAX Get Request:
+        a. Implement a JavaScript function that sends an AJAX GET request to the following URL: "https://api.example.com/data".
+     -->
+
+
+
+     <script src="js/axios.min.js"></script>
+     <script>
+        getList()
+        async function getList(){
+            let res = await axios.get('https://api.example.com/data');
+            if (res.status === 200) {
+                let list = res.data;
+                console.log(list);
+            } else {
+                console.log('error');
+            }
+            
+        }
+     </script>
+</body>
+</html>

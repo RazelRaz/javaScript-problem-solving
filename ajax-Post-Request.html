@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>15.AJAX Post Request:</title>
+</head>
+<body>
+
+  <!-- 
+
+    15.AJAX Post Request:
+
+    a. Implement a JavaScript function that sends an AJAX POST request to the following URL: "https://api.example.com/submit".
+
+    b. Send a JSON payload with the following data: { "name": "John Doe", "email": "johndoe@example.com" }.
+    
+   -->
+  
+  <div class="ajax_area">
+    <label for="ProductName">Name</label>
+    <input type="text" id="ajax_name" placeholder="Name">
+
+    <label for="ProductCode">Email</label>
+    <input type="email" id="ajax_email" placeholder="Email">
+
+    <button onclick="createItem()">Create</button>
+  </div>
+
+  <script src="js/axios.min.js"></script>
+  <script>
+    async function createItem(){
+
+      let ajax_name = document.getElementById('ajax_name').value;
+      let ajax_email = document.getElementById('ajax_email').value;
+
+
+
+      let createObj = { 
+        "name": ajax_name, 
+        "email": ajax_email,
+      }
+
+      // post request
+      let res = await axios.post(`https://crud.teamrabbil.com/api/v1/CreateProduct`, createObj)
+      if (res.status === 200) {
+        alert('Data Created Successfully');
+      } else {
+        alert('error');
+      }
+
+    }
+  </script>
+</body>
+</html>
